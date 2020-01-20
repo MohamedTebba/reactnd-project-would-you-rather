@@ -1,11 +1,12 @@
 import {_getUsers} from '../utils/_DATA'
 import {_getQuestions} from '../utils/_DATA'
+import {_saveQuestion} from '../utils/_DATA'
+import {_saveQuestionAnswer} from '../utils/_DATA'
 import {receiveUsers} from './users'
-import {receiveQuestions} from './questions'
+import {receiveQuestions,saveAnswer,saveQuestion} from './questions'
+
 // import {setAuthedUser} from './autheduser'
 // import {dispatch} from 'react-redux'
-
-// const AUTHED_ID = 'sarahedo'
 
 export const handleInitialUsers = () => {
     return (dispatch) => {
@@ -23,3 +24,22 @@ export const handleInitialQuestions = () => {
         })
     }
 }
+
+export const handleSaveQuestion = (question) => {
+    return (dispatch) => {
+        return _saveQuestion(question).then((res)=>{
+            dispatch(saveQuestion(res))
+        }).catch(()=>alert('An Error was occured! Try again.'))
+    }
+}
+
+export const handleSaveAnswer = ({ authedUser, qid, answer }) => {
+    return (dispatch) => {
+        return _saveQuestionAnswer({ authedUser, qid, answer }).then((res)=>{
+            dispatch(saveAnswer(res))
+        }).catch(()=>alert('An Error was occured! Try again.'))
+    }
+}
+// export const handleAuthedUser = () => {
+//    return (dispatch) => dispatch(setAuthedUser(AUTHED_ID))
+// }

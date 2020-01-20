@@ -31,6 +31,24 @@ let users = {
       "6ni6ok3ym7mf1p33lnez": 'optionTwo'
     },
     questions: ['6ni6ok3ym7mf1p33lnez', 'xj352vofupe1dqz9emx13r'],
+  },
+  mhmdtbba: {
+    id: 'mhmdtbba',
+    name: 'Mohammed Tebba',
+    avatarURL: '',
+    answers: {
+      
+    },
+    questions: [],
+  },
+  gwnpndrgn: {
+    id: 'gwnpndrgn',
+    name: 'Gwen Pendragon',
+    avatarURL: '',
+    answers: {
+      "xj352vofupe1dqz9emx13r": 'optionTwo'
+    },
+    questions: [],
   }
 }
 
@@ -109,7 +127,7 @@ let questions = {
       text: 'write JavaScript',
     },
     optionTwo: {
-      votes: ['tylermcginnis'],
+      votes: ['tylermcginnis','gwnpndrgn'],
       text: 'write Swift'
     }
   },
